@@ -19,7 +19,6 @@ int main(int argc, char **argv)
 		if (line == NULL)
 		{
 			printf("\n");
-			free(args);
 			break;
 		}
 		args = split_line(line);
