@@ -11,7 +11,7 @@ char *read_line(void)
 {
 	char *line = NULL;
 	size_t buffer_size = 0;
-	size_t line_len = 0;
+	int line_len = 0;
 
 	line_len = getline(&line, &buffer_size, stdin);
 	if (line_len == EOF)
@@ -120,7 +120,8 @@ int execute(char **args)
 	else
 	{
 		/* Parent process */
-		do {
+		do
+		{
 			wpid = waitpid(pid, &status, WUNTRACED);
 		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}

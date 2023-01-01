@@ -6,13 +6,14 @@
  *@argv : command line arguments
  * Return: EXIT_SUCCESS, or exit code
  */
-int main(int argc, char **argv)
+int main(int __attribute__((unused)) argc, char __attribute__((unused)) * *argv)
 {
 	char *line;
 	char **args;
 	int status;
 
-	do {
+	do
+	{
 
 		printf("hsh>> ");
 		line = read_line();
